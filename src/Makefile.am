@@ -1,0 +1,3 @@
+AUTOMAKE_OPTIONS=foreign
+CLEANFILES = *~
+SUBDIRS = main po
