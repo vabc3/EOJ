@@ -1,4 +1,0 @@
-EOJ
-===
-
-Exceptional Online Judge
