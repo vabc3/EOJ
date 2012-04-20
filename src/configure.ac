@@ -10,7 +10,7 @@ AM_INIT_AUTOMAKE
 
 
 AM_GNU_GETTEXT([external],[need-ngettext])
-AM_GNU_GETTEXT_VERSION([0.18])
+AM_GNU_GETTEXT_VERSION([0.17])
 ALL_LINGUAS="zh_CN"
 
 # Checks for programs.
