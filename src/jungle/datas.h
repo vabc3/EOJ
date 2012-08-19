@@ -63,3 +63,12 @@ struct LinklistNode
 	int data;
 	LinklistNode* next;
 };
+
+void LinkTT(LinklistNode* head,string& st)
+{
+	if(!head)return;
+	LinklistNode* p=head->next;
+	while(p){
+		st+=p->data;p=p->next;
+	}
+}

@@ -2,6 +2,8 @@
 *.slo
 *.lo
 *.o
+run
+test
 
 # Compiled Dynamic libraries
 *.so

@@ -54,6 +54,8 @@ public:
 		FileDataSource(string fn){
 			is=new ifstream(fn.c_str());
 			*is>>max;
+			string tmp;
+			getline(*is,tmp);
 //			cout<<"Max is "<<max<<endl;
 		}
 		virtual ~FileDataSource(){
