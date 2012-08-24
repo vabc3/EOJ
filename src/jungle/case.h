@@ -21,12 +21,14 @@ bool Case<TInput,TOutput,Processor>::validate()
 	using std::endl;
 	TOutput out	= proc.deal(input);
 	cout<<"Expecting ["<<expected<<"] by ["<<out<<"]\t";
+	bool rt;
 	if(expected	== out){
 		cout<<"Pass!"<<endl;
-		return true;
+		rt= true;
 	}else{
 		cout<<"Fail!"<<endl;
-		return false;
+		rt= false;
 	}
+	return rt;
 }
 #endif

@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 template<typename Ttype>
@@ -53,7 +54,14 @@ class FileDataSource :public DataSource<Ttype>
 public:
 		FileDataSource(string fn){
 			is=new ifstream(fn.c_str());
-			*is>>max;
+			cout<<fn<<endl;
+			try{
+			is->exceptions(	ifstream::failbit|ifstream::badbit);
+				*is>>max;
+			}catch(std::ios_base::failure failure){
+				cout<<"File error "<<fn<<endl;;
+				exit(-1);
+			}
 			string tmp;
 			getline(*is,tmp);
 //			cout<<"Max is "<<max<<endl;

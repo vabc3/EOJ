@@ -2,7 +2,9 @@
 #include <iterator>
 #include "datacontainer.h"
 #include "case.h"
-template<typename Tin,typename Tout,typename Processor>
+#include "common.h"
+
+template<typename Tin,typename Tout,typename Processor = Proc<Tin,Tout> >
 class Jungle
 {
 public:
