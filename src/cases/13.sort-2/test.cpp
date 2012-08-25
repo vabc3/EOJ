@@ -173,6 +173,7 @@ void siftdown(int*s, int l, int x)
 	}while(a<l);
 }
 
+#define N 12
 
 void build_heap(int* s,int n)
 {
@@ -194,11 +195,16 @@ void heap_sort(int *s,int n)
 IntArray m2(const IntArray& d)
 {
 	IntArray z=d;
-	int* data=z.s;
+	int* s=z.s;
 	int n=z.sz;
-	build_heap(data,n);
-	heap_sort(data,n);
+	build_heap(s,N);
+	for(int i=N+1;i<n;i++){
+		if(s[i]>=s[0])continue;
+		int tmp=s[0];s[0]=s[i];s[i]=tmp;
+		siftdown(s,N,0);
+
+	}
+	heap_sort(s,n);
 	return z;
 }
-
 

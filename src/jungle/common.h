@@ -32,4 +32,19 @@ class Dinout<string> :public FileDataSource<string>
 			return a;
 		}
 };
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+void rand_init()
+{
+	srand(time(NULL));
+}
+
+int rand_n(int n)
+{
+	return rand()%n;
+}
+
+
 #endif

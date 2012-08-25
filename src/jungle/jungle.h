@@ -25,7 +25,7 @@ Jungle<Tin,Tout,Processor>::Jungle(DataSource<Tin>* tin,DataSource<Tout>* tou )
 template<typename Tin,typename Tout,typename Processor>
 void Jungle<Tin,Tout,Processor>::Run()
 {
-	cout<<"Run begin \n";//<<tin.getM()<<" cases\n";
+	cout<<"Run begin\n";//<<tin.getM()<<" cases\n";
 	typename DataContainer<Tin>::iterator it=tin.begin();
 	typename DataContainer<Tout>::iterator ot=tou.begin();
 	int cou=0;

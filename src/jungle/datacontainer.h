@@ -44,6 +44,7 @@ template<typename Ttype>
 class DataSource
 {
 public:
+//	virtual ~DataSource(){}
 	virtual Ttype get()=0;
 	virtual int getM()=0;
 };
@@ -53,8 +54,11 @@ class FileDataSource :public DataSource<Ttype>
 {
 public:
 		FileDataSource(string fn){
+//			char ct[255];
+//			fn.copy(ct,fn.length(),0);
+//			ct[fn.length()]='\0';
 			is=new ifstream(fn.c_str());
-			cout<<fn<<endl;
+//			cout<<fn<<endl;
 			try{
 			is->exceptions(	ifstream::failbit|ifstream::badbit);
 				*is>>max;
@@ -67,6 +71,7 @@ public:
 //			cout<<"Max is "<<max<<endl;
 		}
 		virtual ~FileDataSource(){
+//cout<<"Call me!!!";
 			is->close();
 			delete is;
 		}
@@ -91,7 +96,7 @@ public:
 		max=ds->getM();
 	}
 	virtual ~DataContainer(){
-		delete ds;
+//		delete ds;
 	}
 	typedef DataContainerIterator<Ttype> iterator;
 	iterator begin(){ return DataContainerIterator<Ttype>(ds,0);}	

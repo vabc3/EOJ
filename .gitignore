@@ -3,6 +3,7 @@
 *.lo
 *.o
 run
+a.out
 test
 
 # Compiled Dynamic libraries

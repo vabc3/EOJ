@@ -1,0 +1,34 @@
+==4597== Memcheck, a memory error detector
+==4597== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==4597== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==4597== Command: ./run
+==4597== 
+==4597== Invalid free() / delete / delete[] / realloc()
+==4597==    at 0x4C28CFC: operator delete(void*) (vg_replace_malloc.c:457)
+==4597==    by 0x4023A4: DataContainer<IntArray>::~DataContainer() (datacontainer.h:97)
+==4597==    by 0x4021B1: Jungle<IntArray, IntArray, Proc<IntArray, IntArray> >::~Jungle() (jungle.h:8)
+==4597==    by 0x401CE5: main (test.cpp:101)
+==4597==  Address 0x595a670 is 0 bytes inside a block of size 24 free'd
+==4597==    at 0x4C28CFC: operator delete(void*) (vg_replace_malloc.c:457)
+==4597==    by 0x402221: Dinout<IntArray>::~Dinout() (common.h:13)
+==4597==    by 0x401CD4: main (test.cpp:105)
+==4597== 
+==4597== Invalid free() / delete / delete[] / realloc()
+==4597==    at 0x4C28CFC: operator delete(void*) (vg_replace_malloc.c:457)
+==4597==    by 0x4023A4: DataContainer<IntArray>::~DataContainer() (datacontainer.h:97)
+==4597==    by 0x4021BD: Jungle<IntArray, IntArray, Proc<IntArray, IntArray> >::~Jungle() (jungle.h:8)
+==4597==    by 0x401CE5: main (test.cpp:101)
+==4597==  Address 0x59580a0 is 0 bytes inside a block of size 24 free'd
+==4597==    at 0x4C28CFC: operator delete(void*) (vg_replace_malloc.c:457)
+==4597==    by 0x402221: Dinout<IntArray>::~Dinout() (common.h:13)
+==4597==    by 0x401CB6: main (test.cpp:104)
+==4597== 
+==4597== 
+==4597== HEAP SUMMARY:
+==4597==     in use at exit: 0 bytes in 0 blocks
+==4597==   total heap usage: 22 allocs, 24 frees, 19,287 bytes allocated
+==4597== 
+==4597== All heap blocks were freed -- no leaks are possible
+==4597== 
+==4597== For counts of detected and suppressed errors, rerun with: -v
+==4597== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 6 from 6)
