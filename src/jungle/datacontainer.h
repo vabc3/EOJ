@@ -22,8 +22,8 @@ public:
 			}
 		Ttype operator*(){
 //			cout<<"Begin deref ->";
-			if(!gain)gain=true,loc=idc->get();
-			//cout<<"Got:["<<loc<<"]\n";
+			if(!gain){gain=true;loc=idc->get();}
+//cout<<"Got:["<<loc.len<<"]\n";
 			return loc;
 		}
 		DataContainerIterator& operator++(int){
@@ -79,7 +79,9 @@ public:
 			return max;
 		}
 		Ttype get(){
-			return _do(*is);
+			Ttype s=_do(*is);
+//cout<<"In get()="<<s.len<<endl;
+			return s;
 		}
 protected:
 		virtual Ttype _do(istream& is)=0;

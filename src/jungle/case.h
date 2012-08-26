@@ -26,7 +26,7 @@ bool Case<TInput,TOutput,Processor>::validate()
 		cout<<"Pass!"<<endl;
 		rt= true;
 	}else{
-		cout<<"Fail!"<<endl;
+		cout<<"\33[5m\33[31mFail!\33[0m"<<endl;
 		rt= false;
 	}
 	return rt;

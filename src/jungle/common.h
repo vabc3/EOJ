@@ -17,6 +17,7 @@ class Dinout :public FileDataSource<TData>
 		TData _do(istream& is){
 			TData a;
 			is>>a;
+//cout<<"DBG@!!!a.len="<<a.len<<endl;
 			return a;
 		}
 };
@@ -32,6 +33,7 @@ class Dinout<string> :public FileDataSource<string>
 			return a;
 		}
 };
+
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
