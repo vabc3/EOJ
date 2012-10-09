@@ -43,5 +43,5 @@ void Jungle<Tin,Tout,Processor>::Run()
 	else
 		cout<<"All";
 	cout<<" passed!\n";
-};
+}
 
